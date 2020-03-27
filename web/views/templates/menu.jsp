@@ -53,28 +53,28 @@
                 </div>
                 <div class="col-md-12 text-center">
                     <ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
-                       <c:forEach items="$categories" var="categorie" varStatus="status"><%-- TODO Apprendre à faire un foreach --%>
+                       <c:forEach items="$categories" var="categorie" varStatus="status">
                             <li class="nav-item site-animate">
                                 <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill" href="#pills-breakfast" role="tab" aria-controls="pills-breakfast" aria-selected="true"><c:out value = "${categorie}"/></a>
                             </li>
+                           <div class="tab-content text-left">
+                               <c:forEach items="$plats" var="plat" varStatus="status">
+                                   <div class="row">
+                                       <div class="col-md-6 site-animate">
+                                           <div class="media menu-item">
+                                               <img src="../img/plats/1.png" class="img-fluid mr-3" alt="Free Template by colorlib.com">
+                                               <div class="media-body">
+                                                   <h5 class="mt-0">Salted Fried Chicken</h5>
+                                                   <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                                   <h6 class="text-primary menu-price">$35.50</h6>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </c:forEach>
+                           </div>
                         </c:forEach>
                     </ul>
-                    <div class="tab-content text-left">
-                        <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                            <div class="row">
-                                <div class="col-md-6 site-animate">
-                                    <div class="media menu-item">
-                                        <img src="../img/plats/1.png" class="img-fluid mr-3" alt="Free Template by colorlib.com">
-                                        <div class="media-body">
-                                            <h5 class="mt-0">Salted Fried Chicken</h5>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                            <h6 class="text-primary menu-price">$35.50</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
