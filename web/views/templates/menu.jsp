@@ -55,7 +55,7 @@
                     <ul class="nav site-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
                        <c:forEach items="$categories" var="categorie" varStatus="status">
                             <li class="nav-item site-animate">
-                                <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill" href="#pills-breakfast" role="tab" aria-controls="pills-breakfast" aria-selected="true"><c:out value = "${categorie}"/></a>
+                                <c:out value = "${categorie}"/>
                             </li>
                            <div class="tab-content text-left">
                                <c:forEach items="$plats" var="plat" varStatus="status">
