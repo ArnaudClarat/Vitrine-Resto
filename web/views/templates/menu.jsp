@@ -5,10 +5,10 @@
   Time: 16:29
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <title>EatWell</title>
 
@@ -19,15 +19,14 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
     <div class="container">
-        <a class="navbar-brand" href="index.html">EatWell</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
+        <a class="navbar-brand" href="menu">EatWell</a>
 
         <div class="collapse navbar-collapse" id="site-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
+                <li class="nav-item"><a href="categorie" class="nav-link">Catégorie</a></li>
+                <li class="nav-item"><a href="plat" class="nav-link">Plat</a></li>
             </ul>
         </div>
     </div>

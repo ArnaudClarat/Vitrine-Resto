@@ -10,10 +10,10 @@ import java.io.IOException;
 @WebServlet(name = "Servlet_categorie", urlPatterns = {"/categorie"})
 public class Servlet_categorie extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("views/CRUD.jsp").forward(request, response);
+		request.getRequestDispatcher("views/templates/categorie.jsp").forward(request, response);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("views/CRUD.jsp").forward(request, response);
+		request.getRequestDispatcher("views/templates/categorie.jsp").forward(request, response);
 	}
 }

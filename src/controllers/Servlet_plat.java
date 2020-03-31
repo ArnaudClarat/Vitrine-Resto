@@ -10,10 +10,10 @@ import java.io.IOException;
 @WebServlet(name = "Servlet_plat", urlPatterns = {"/plat"})
 public class Servlet_plat extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("views/templates/plat.jsp").forward(request, response);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("views/templates/plat.jsp").forward(request, response);
 	}
 }
