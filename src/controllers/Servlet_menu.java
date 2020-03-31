@@ -1,5 +1,7 @@
 package controllers;
 
+import models.Categorie;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,8 @@ public class Servlet_menu extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("categorie", Categorie.getAll());
+		
 		request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
 	}
 }

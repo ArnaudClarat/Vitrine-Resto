@@ -2,7 +2,9 @@ package models;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Map;
 
 abstract class BaseEntity {
@@ -31,7 +33,25 @@ abstract class BaseEntity {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		return null;
+	}
+	
+	public static int getCount() {
+		try {
+			Connection db = DB.getDB();
+			assert db != null;
+			PreparedStatement pStmt = null;
+			pStmt = db.prepareStatement("SELECT COUNT(?) FROM ? ");
+			pStmt.setString(1, definition.get(1));
+			pStmt.setString(2, definition.get(0));
+			ResultSet resultSet = pStmt.executeQuery();
+			while (resultSet.next()) {
+				System.out.println(resultSet.getInt(definition.get(1)));
+			}
+			return 0;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 }

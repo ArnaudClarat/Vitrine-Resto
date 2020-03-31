@@ -1,11 +1,11 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class Categorie extends BaseEntity {
 	private static Map<String,String> definition;
 	static {
-		assert false;
 		definition.put("table","t_categ");
 		definition.put("primary","id_categ");
 	}
@@ -18,5 +18,14 @@ public class Categorie extends BaseEntity {
 	
 	public Categorie(int id) {
 		super(id);
+	}
+	
+	public static ArrayList<Categorie> getAll() {
+		int count = getCount();
+		ArrayList<Categorie> categories = new ArrayList<>();
+		for (int i = 0; i < count; i++) {
+			categories.add(new Categorie(i));
+		}
+		return categories;
 	}
 }
