@@ -1,14 +1,19 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Categorie extends BaseEntity {
-	private static Map<String,String> definition;
+	public static Map<String,String> definition = new HashMap<>();
 	static {
-		assert false;
-		definition.put("table","t_categ");
-		definition.put("primary","id_categ");
+		try {
+			assert false;
+			definition.put("table", "t_categ");
+			definition.put("primary", "id_categ");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private static Map<String,String> fields;
