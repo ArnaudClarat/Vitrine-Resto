@@ -3,7 +3,6 @@ package models;
 import java.sql.*;
 
 public class DB {
-	private static DB connectionDatabase;
 	private static Connection conn;
 	
 	static Connection getDB() {
@@ -16,9 +15,12 @@ public class DB {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vitrineresto?serverTimezone=UTC", "root", "");
 			System.out.println("Connection done");
 			return conn;
-		} catch (SQLException | ClassNotFoundException e) {
-			System.out.println("Cannot connect to the database!");
+		} catch (SQLException e) {
+			System.out.println("Cannot connect to the database! SQL");
 			e.printStackTrace();
+			return null;
+		} catch (ClassNotFoundException e) {
+			System.out.println("Cannot connect to the database! Class");
 			return null;
 		}
 	}
