@@ -1,17 +1,22 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Categorie extends BaseEntity {
-	private static Map<String,String> definition;
+	public static Map<String,String> definition = new HashMap<>();
 	static {
-		assert false;
-		definition.put("table","t_categ");
-		definition.put("primary","id_categ");
+		try {
+			assert false;
+			definition.put("table", "t_categ");
+			definition.put("primary", "id_categ");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	private static Map<String,String> fields;
+	public static Map<String,String> fields = new HashMap<>();
 	static {
 		fields.put("id", "id_categ");
 		fields.put("nom", "nom_categ");
@@ -26,6 +31,7 @@ public class Categorie extends BaseEntity {
 		ArrayList<Categorie> categories = new ArrayList<>();
 		for (int i = 1; i < count; i++) {
 			categories.add(new Categorie(i));
+			System.out.println(categories.toString());
 		}
 		return categories;
 	}
