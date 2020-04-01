@@ -6,6 +6,7 @@ import java.util.Map;
 public class Categorie extends BaseEntity {
 	private static Map<String,String> definition;
 	static {
+		assert false;
 		definition.put("table","t_categ");
 		definition.put("primary","id_categ");
 	}
@@ -21,9 +22,9 @@ public class Categorie extends BaseEntity {
 	}
 	
 	public static ArrayList<Categorie> getAll() {
-		int count = getCount();
+		int count = getCount() + 1;
 		ArrayList<Categorie> categories = new ArrayList<>();
-		for (int i = 0; i < count; i++) {
+		for (int i = 1; i < count; i++) {
 			categories.add(new Categorie(i));
 		}
 		return categories;
