@@ -1,5 +1,6 @@
 package models;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,13 +8,8 @@ import java.util.Map;
 public class Categorie extends BaseEntity {
 	public static Map<String,String> definition = new HashMap<>();
 	static {
-		try {
-			assert false;
-			definition.put("table", "t_categ");
-			definition.put("primary", "id_categ");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		definition.put("table", "t_categ");
+		definition.put("primary", "id_categ");
 	}
 	
 	public static Map<String,String> fields = new HashMap<>();
@@ -22,16 +18,15 @@ public class Categorie extends BaseEntity {
 		fields.put("nom", "nom_categ");
 	}
 	
-	public Categorie(int id) {
-		super(id);
+	public Categorie(int id) throws SQLException {
+		super(id, definition, fields);
 	}
 	
-	public static ArrayList<Categorie> getAll() {
-		int count = getCount() + 1;
+	public static ArrayList<Categorie> getAll() throws SQLException {
+		int count = getCount(definition) + 1;
 		ArrayList<Categorie> categories = new ArrayList<>();
 		for (int i = 1; i < count; i++) {
 			categories.add(new Categorie(i));
-			System.out.println(categories.toString());
 		}
 		return categories;
 	}

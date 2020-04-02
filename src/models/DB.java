@@ -3,9 +3,13 @@ package models;
 import java.sql.*;
 
 public class DB {
-	private static Connection conn;
+	private static Connection conn = getConn();
 	
-	static Connection getDB() {
+	public static Connection getDB() {
+		return conn;
+	}
+	
+	static Connection getConn() {
 		try {
 			System.out.println("Loading driver");
 			Class.forName("com.mysql.cj.jdbc.Driver"); // Chargement du driver
@@ -21,6 +25,7 @@ public class DB {
 			return null;
 		} catch (ClassNotFoundException e) {
 			System.out.println("Cannot connect to the database! Class");
+			e.printStackTrace();
 			return null;
 		}
 	}

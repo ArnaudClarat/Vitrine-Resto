@@ -55,7 +55,7 @@ public class Plat extends BaseEntity {
 		}
 	}
 	
-	public Plat(int id) {
-		super(id);
+	public Plat(int id) throws SQLException {
+		super(id, definition, fields);
 	}
 }
