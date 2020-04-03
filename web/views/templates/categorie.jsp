@@ -60,11 +60,11 @@
             <div class="col-md-12 text-center">
                 <div class="tab-content text-left">
                     <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                        <c:forEach items="$categories" var="categorie" varStatus="status">
+                        <c:forEach items="${categories}" var="categorie">
                             <div class="row">
                                 <div class="col-md-6 site-animate">
                                     <p>coucou</p>
-                                    <c:forEach items="$plats" var="plat" varStatus="status">
+                                    <c:forEach items="$plats" var="plat">
                                         <p>test</p>
                                         <!--
                                         <div class="media menu-item">

@@ -60,12 +60,12 @@
             <div class="col-md-12 text-center">
                 <div class="tab-content text-left">
                     <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                        <c:forEach items="$categories" var="categorie" varStatus="status">
+                        <c:forEach items="${categories}" var="categorie">
                             <div class="row">
                                 <div class="col-md-6 site-animate">
-                                    <p>coucou</p>
-                                    <c:forEach items="$plats" var="plat" varStatus="status">
-                                        <p>test</p>
+                                    <h5>${categorie.getNom()}</h5>
+                                    <c:forEach items="${plats}" var="plat">
+                                        <p>${plat.getNom()}</p>
                                         <!--
                                         <div class="media menu-item">
                                             <img class="mr-3 img-fluid" src="../img/plats/1.png" alt="image">

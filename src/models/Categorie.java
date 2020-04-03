@@ -30,4 +30,8 @@ public class Categorie extends BaseEntity {
 		}
 		return categories;
 	}
+	
+	public String getNom() {
+		return this.entity.get("nom_categ");
+	}
 }

@@ -3,17 +3,19 @@ package models;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Plat extends BaseEntity {
-	private static Map<String,String> definition;
+	private static Map<String,String> definition = new HashMap<>();
 	static {
 		assert false;
 		definition.put("table","t_plats");
 		definition.put("primary","id_plat");
 	}
 	
-	private static Map<String,String> fields;
+	private static Map<String,String> fields = new HashMap<>();
 	static {
 		fields.put("id", "id_plat");
 		fields.put("nom", "nom_plat");
@@ -22,22 +24,34 @@ public class Plat extends BaseEntity {
 		fields.put("categ", "categ_plat");
 	}
 	
-	public Map<String, String> entity;
+	public static ArrayList<Plat> getAll(){
+		int count = getCount(definition) + 1;
+		ArrayList<Plat> plats = new ArrayList<>();
+		for (int i = 1; i < count; i++) {
+			try {
+				plats.add(new Plat(i));
+			} catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(i);
+			}
+		}
+		return plats;
+	}
 	
 	public String getId(){
-		return this.entity.get("id");
+		return this.entity.get("id_plat");
 	}
 	
 	public String getNom(){
-		return this.entity.get("nom");
+		return this.entity.get("nom_plat");
 	}
 	
 	public String getDetails(){
-		return this.entity.get("details");
+		return this.entity.get("details_plat");
 	}
 	
 	public String getPrix(){
-		return this.entity.get("prix");
+		return this.entity.get("prix_plat");
 	}
 	
 	public String getCateg(){
