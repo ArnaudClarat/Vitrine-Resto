@@ -59,30 +59,25 @@
 
             <div class="col-md-12 text-center">
                 <div class="tab-content text-left">
-                    <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
-                        <c:forEach items="${categories}" var="categorie">
-                            <div class="row">
-                                <div class="col-md-6 site-animate">
-                                    <h5>${categorie.getNom()}</h5>
-                                    <c:forEach items="${plats}" var="plat">
-                                        <p>${plat.getNom()}</p>
-                                        <!--
-                                        <div class="media menu-item">
-                                            <img class="mr-3 img-fluid" src="../img/plats/1.png" alt="image">
-                                            <div class="media-body">
-                                                <h5 class="mt-0">Salted Fried Chicken</h5>
-                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                                                <h6 class="text-primary menu-price">$12.50</h6>
-                                            </div>
+                    <c:forEach items="${categories}" var="categorie">
+                        <div class="row">
+                            <div class="col-md-6 site-animate">
+                                <h5>${categorie.getNom()}</h5>
+                                <c:forEach items="${plats}" var="plat">
+                                    <p>${plat.getNom()}</p>
+                                    <div class="media menu-item">
+                                        <img class="mr-3 img-fluid" src="../../../../web/views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">${plat.getNom()}</h5>
+                                            <p>${plat.getDetails()}</p>
+                                            <h6 class="text-primary menu-price">${plat.getPrix()}</h6>
                                         </div>
-                                        -->
-                                    </c:forEach>
-                                </div>
+                                    </div>
+                                </c:forEach>
                             </div>
-                        </c:forEach>
-                    </div>
+                        </div>
+                    </c:forEach>
                 </div>
-
             </div>
         </div>
     </div>
