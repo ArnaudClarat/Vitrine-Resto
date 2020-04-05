@@ -13,7 +13,7 @@
     <title>EatWell</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="views/css/global.css">
 </head>
 <body data-spy="scroll" data-target="#site-navbar" data-offset="200">
 
@@ -66,7 +66,7 @@
                                 <c:forEach items="${plats}" var="plat">
                                     <p>${plat.getNom()}</p>
                                     <div class="media menu-item">
-                                        <img class="mr-3 img-fluid" src="../../../../web/views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
+                                        <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
                                         <div class="media-body">
                                             <h5 class="mt-0">${plat.getNom()}</h5>
                                             <p>${plat.getDetails()}</p>
