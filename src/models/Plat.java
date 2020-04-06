@@ -1,8 +1,5 @@
 package models;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,12 +25,7 @@ public class Plat extends BaseEntity {
 		int count = getCount(definition) + 1;
 		ArrayList<Plat> plats = new ArrayList<>();
 		for (int i = 1; i < count; i++) {
-			try {
-				plats.add(new Plat(i));
-			} catch (SQLException e) {
-				e.printStackTrace();
-				System.out.println(i);
-			}
+			plats.add(new Plat(i));
 		}
 		return plats;
 	}
@@ -55,21 +47,10 @@ public class Plat extends BaseEntity {
 	}
 	
 	public String getCateg(){
-		try {
-			Connection db = DB.getDB();
-			assert db != null;
-			PreparedStatement pStmt = null;
-			pStmt = db.prepareStatement("SELECT nom_categ FROM t_categ WHERE id_categ = ?");
-			pStmt.setString(1, this.entity.get("categ"));
-			System.out.println(pStmt.executeQuery());
-			return "test";
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return "Erreur";
+		return this.entity.get("categ_plat");
 		}
-	}
 	
-	public Plat(int id) throws SQLException {
+	public Plat(int id) {
 		super(id, definition, fields);
 	}
 }

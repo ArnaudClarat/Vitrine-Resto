@@ -23,8 +23,6 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="categorie" class="nav-link">Catégorie</a></li>
-                <li class="nav-item"><a href="plat" class="nav-link">Plat</a></li>
             </ul>
         </div>
     </div>
@@ -54,23 +52,27 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div class="row">
             <div class="col-md-12 text-center">
                 <div class="tab-content text-left">
                     <c:forEach items="${categories}" var="categorie">
                         <div class="row">
-                            <div class="col-md-6 site-animate">
-                                <h5>${categorie.getNom()}</h5>
+                            <div class="col-md-12 site-animate">
+                                <h5><strong><u>${categorie.getNom()}</u></strong></h5>
                                 <c:forEach items="${plats}" var="plat">
-                                    <p>${plat.getNom()}</p>
-                                    <div class="media menu-item">
-                                        <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
-                                        <div class="media-body">
-                                            <h5 class="mt-0">${plat.getNom()}</h5>
-                                            <p>${plat.getDetails()}</p>
-                                            <h6 class="text-primary menu-price">${plat.getPrix()}</h6>
+                                    ${plat.getCateg()}${categorie.getId()}<br>
+                                    <c:if test="${plat.getCateg()} == ${categorie.getId()}">
+                                        <div class="card col-md-4" style="width: 18rem;">
+                                            <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
+                                            <div class="card-body">
+                                                <h5 class="card-title">${plat.getNom()}</h5>
+                                                <p class="card-text">>${plat.getDetails()}</p>
+                                                <h6 class="text-primary menu-price">${plat.getPrix()}</h6>
+                                                <a href="product?id=${plat.getId()}">Modifier</a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </c:if>
                                 </c:forEach>
                             </div>
                         </div>
