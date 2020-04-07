@@ -54,30 +54,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="tab-content text-left">
-                    <c:forEach items="${categories}" var="categorie">
-                        <div class="row">
-                            <div class="col-md-12 site-animate">
-                                <h5><strong><u>${categorie.getNom()}</u></strong></h5>
-                                <c:forEach items="${plats}" var="plat">
-                                    ${plat.getCateg()}${categorie.getId()}<br>
-                                    <c:if test="${plat.getCateg()} == ${categorie.getId()}">
-                                        <div class="card col-md-4" style="width: 18rem;">
-                                            <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
-                                            <div class="card-body">
-                                                <h5 class="card-title">${plat.getNom()}</h5>
-                                                <p class="card-text">>${plat.getDetails()}</p>
-                                                <h6 class="text-primary menu-price">${plat.getPrix()}</h6>
-                                                <a href="product?id=${plat.getId()}">Modifier</a>
-                                            </div>
-                                        </div>
-                                    </c:if>
-                                </c:forEach>
-                            </div>
-                        </div>
-                    </c:forEach>
-                </div>
+            <div class="col-md-12">
+                <c:forEach items="${categories}" var="categorie">
+                    <h5 style="margin-top: 5%"><strong><u>${categorie.getNom()}</u></strong></h5><br>
+                    <div class="row">
+                        <c:forEach items="${plats}" var="plat">
+                            <c:if test="${categorie.getId().equals(plat.getCateg())}">
+                                <div class="card col-md-4" style="width: 18rem;">
+                                    <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${plat.getNom()}</h5>
+                                        <p class="card-text">${plat.getDetails()}</p>
+                                        <h6 class="menu-price">${plat.getPrix()}</h6>
+                                        <a href="product?id=${plat.getId()}">Modifier</a>
+                                    </div>
+                                </div>
+                            </c:if>
+                        </c:forEach>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </div>
