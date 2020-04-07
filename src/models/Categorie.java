@@ -18,11 +18,11 @@ public class Categorie extends BaseEntity {
 		fields.put("nom", "nom_categ");
 	}
 	
-	public Categorie(int id) throws SQLException {
+	public Categorie(int id) {
 		super(id, definition, fields);
 	}
 	
-	public static ArrayList<Categorie> getAll() throws SQLException {
+	public static ArrayList<Categorie> getAll() {
 		int count = getCount(definition) + 1;
 		ArrayList<Categorie> categories = new ArrayList<>();
 		for (int i = 1; i < count; i++) {
