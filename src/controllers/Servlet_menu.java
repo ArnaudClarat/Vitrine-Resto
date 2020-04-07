@@ -13,18 +13,21 @@ import java.sql.SQLException;
 
 @WebServlet(name = "Servlet_menu", urlPatterns = {"/menu"})
 public class Servlet_menu extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+		handleRequest(request, response);
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		handleRequest(request, response);
+	}
+	
+	public void handleRequest(HttpServletRequest req, HttpServletResponse res) {
 		try {
-			request.setAttribute("categories", Categorie.getAll());
-			request.setAttribute("plats", Plat.getAll());
-			request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
-		} catch (ServletException | IOException | SQLException e) {
+			req.setAttribute("categories", Categorie.getAll());
+			req.setAttribute("plats", Plat.getAll());
+			req.getRequestDispatcher("views/templates/menu.jsp").forward(req, res);
+		} catch (ServletException | IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }
