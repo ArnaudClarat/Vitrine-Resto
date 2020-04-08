@@ -30,10 +30,48 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <%-- TODO afficher plat à modifier --%>
-                <p>${objet}</p>
-
-                <p>Coucou</p>
+                <form method="post" class="form" action="validate" style="margin-top: 5%">
+                    <div class="form-row">
+                        <div class="col-md-2">
+                            <fieldset class="form-group">
+                                <label for="nom">Name : </label>
+                                <input class="form-control" type="text" id="nom" name="nom" value="${object.getNom()}" required>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-7">
+                            <fieldset class="form-group">
+                                <label for="details">Détails : </label>
+                                <input class="form-control" type="text" id="details" name="details" value="${object.getDetails()}" required>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-1">
+                            <fieldset class="form-group">
+                                <label for="prix">Prix : </label>
+                                <input class="form-control" type="text" id="prix" name="prix" value="${object.getPrix()}">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-2">
+                            <fieldset class="form-group">
+                                <label for="categ">Catégorie : </label>
+                                <select class="form-control" id="categ" name="categ">
+                                    <option value="1">Viande</option>
+                                    <option value="2">Poisson</option>
+                                    <option value="3">Volaille</option>
+                                    <option value="4">Végé</option>
+                                    <option value="5">Vegan</option>
+                                    <option value="6">Soupe</option>
+                                    <option value="7">Dessert</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" class="btn btn-secondary" value="Valider">
+                    </div>
+                </form>
+                <form class="form form-inline" action="del">
+                    <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
+                </form>
             </div>
         </div>
     </div>
