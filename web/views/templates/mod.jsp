@@ -33,27 +33,28 @@
                 <form method="post" class="form" action="validate" style="margin-top: 5%">
                     <div class="form-row">
                         <div class="col-md-2">
+                            <input type="hidden" name="id_plat" value="${object.getId()}">
                             <fieldset class="form-group">
-                                <label for="nom">Name : </label>
-                                <input class="form-control" type="text" id="nom" name="nom" value="${object.getNom()}" required>
+                                <label for="nom_plat">Name : </label>
+                                <input class="form-control" type="text" id="nom_plat" name="nom_plat" value="${object.getNom()}" required>
                             </fieldset>
                         </div>
                         <div class="col-md-7">
                             <fieldset class="form-group">
-                                <label for="details">Détails : </label>
-                                <input class="form-control" type="text" id="details" name="details" value="${object.getDetails()}" required>
+                                <label for="details_plat">Détails : </label>
+                                <input class="form-control" type="text" id="details_plat" name="details_plat" value="${object.getDetails()}" required>
                             </fieldset>
                         </div>
                         <div class="col-md-1">
                             <fieldset class="form-group">
-                                <label for="prix">Prix : </label>
-                                <input class="form-control" type="text" id="prix" name="prix" value="${object.getPrix()}">
+                                <label for="prix_plat">Prix : </label>
+                                <input class="form-control" type="text" id="prix_plat" name="prix_plat" value="${object.getPrix()}" required>
                             </fieldset>
                         </div>
                         <div class="col-md-2">
                             <fieldset class="form-group">
-                                <label for="categ">Catégorie : </label>
-                                <select class="form-control" id="categ" name="categ">
+                                <label for="categ_plat">Catégorie : </label>
+                                <select class="form-control" id="categ_plat" name="categ_plat" required>
                                     <option value="1">Viande</option>
                                     <option value="2">Poisson</option>
                                     <option value="3">Volaille</option>
@@ -69,7 +70,8 @@
                         <input type="submit" class="btn btn-secondary" value="Valider">
                     </div>
                 </form>
-                <form class="form form-inline" action="del">
+                <form class="form form-inline" action="del" method="get">
+                    <input type="hidden" name="id" value="${object.getId()}">
                     <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
                 </form>
             </div>
@@ -80,9 +82,10 @@
         <div class="container">
             <div class="row site-animate">
                 <div class="col-md-12 text-center">
-                    <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;2020 All rights reserved | This template is made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </p>
                 </div>
             </div>
         </div>

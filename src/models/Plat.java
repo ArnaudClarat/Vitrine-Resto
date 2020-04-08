@@ -1,5 +1,8 @@
 package models;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +52,38 @@ public class Plat extends BaseEntity {
 	public String getCateg(){
 		return this.entity.get("categ_plat");
 		}
+		
+	public static boolean modPlat(String colonne, String valeur, String id) {
+		try {
+			Connection db = DB.getDB();
+			assert db != null;
+			PreparedStatement pStmt = db.prepareStatement("UPDATE t_plats SET " + colonne + " = ? WHERE id_plat = ?");
+			pStmt.setString(1, valeur);
+			pStmt.setString(2, id);
+			System.out.println(pStmt);
+			return pStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Erreur modification");
+			return false;
+		}
+	}
+	
+	public static boolean delPlat(String id) {
+		try {
+			Connection db = DB.getDB();
+			assert db != null;
+			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE id_plat = ?");
+			pStmt.setString(1, id);
+			boolean test = pStmt.execute();
+			System.out.println(test);
+			return test;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Erreur suppression");
+			return false;
+		}
+	}
 	
 	public Plat(int id) {
 		super(id, definition, fields);
