@@ -1,6 +1,5 @@
 package controllers;
 
-import models.Categorie;
 import models.Plat;
 
 import javax.servlet.ServletException;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Enumeration;
 
 @WebServlet(name = "Servlet_mod", urlPatterns = {"/mod"})
@@ -26,7 +24,7 @@ public class Servlet_mod extends HttpServlet {
 				String paramValue = request.getParameter(paramName);
 				Plat plat = new Plat(Integer.parseInt(paramValue));
 				request.setAttribute("object", plat);
-				request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
+				request.getRequestDispatcher("views/templates/mod.jsp").forward(request, response);
 			}
 		} catch (ServletException | IOException e) {
 			e.printStackTrace();

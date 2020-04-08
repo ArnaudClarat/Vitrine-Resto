@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>EatWell</title>
+    <title>EatWell - Accueil</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="views/css/global.css">
 </head>
@@ -61,11 +61,11 @@
                         <c:forEach items="${plats}" var="plat">
                             <c:if test="${categorie.getId().equals(plat.getCateg())}">
                                 <div class="card col-md-4" style="width: 18rem;">
-                                    <img class="mr-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
+                                    <img class="m-3 img-fluid" src="views/img/plats/${plat.getId()}.png" alt="${plat.getNom()}">
                                     <div class="card-body">
                                         <h5 class="card-title">${plat.getNom()}</h5>
                                         <p class="card-text">${plat.getDetails()}</p>
-                                        <h6 class="menu-price">${plat.getPrix()}</h6>
+                                        <h6 class="menu-price">${plat.getPrix()}€</h6>
                                         <a href="mod?id=${plat.getId()}">Modifier</a>
                                     </div>
                                 </div>
