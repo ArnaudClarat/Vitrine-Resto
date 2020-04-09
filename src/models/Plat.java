@@ -25,9 +25,8 @@ public class Plat extends BaseEntity {
 	}
 	
 	public static ArrayList<Plat> getAll(){
-		int count = getCount(definition) + 1;
 		ArrayList<Plat> plats = new ArrayList<>();
-		for (int i = 1; i < count; i++) {
+		for (int i = 1; i <= 8; i++) {
 			plats.add(new Plat(i));
 		}
 		return plats;
@@ -53,35 +52,32 @@ public class Plat extends BaseEntity {
 		return this.entity.get("categ_plat");
 		}
 		
-	public static boolean modPlat(String colonne, String valeur, String id) {
+	public static void modPlat(String colonne, String valeur, String id) {
 		try {
 			Connection db = DB.getDB();
 			assert db != null;
 			PreparedStatement pStmt = db.prepareStatement("UPDATE t_plats SET " + colonne + " = ? WHERE id_plat = ?");
 			pStmt.setString(1, valeur);
 			pStmt.setString(2, id);
-			System.out.println(pStmt);
-			return pStmt.execute();
+			System.out.println(pStmt.execute());
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Erreur modification");
-			return false;
+			System.out.println(false);
 		}
 	}
 	
-	public static boolean delPlat(String id) {
+	public static void delPlat(String id) {
 		try {
 			Connection db = DB.getDB();
 			assert db != null;
 			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE id_plat = ?");
 			pStmt.setString(1, id);
-			boolean test = pStmt.execute();
-			System.out.println(test);
-			return test;
+			System.out.println(pStmt.execute());
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Erreur suppression");
-			return false;
+			System.out.println(false);
 		}
 	}
 	
