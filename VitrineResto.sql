@@ -1,5 +1,3 @@
-SET time_zone = "+02:00";
-
 --
 -- Base de données :  `vitrineresto`
 --
@@ -62,5 +60,5 @@ INSERT INTO `t_plats` (`nom_plat`, `details_plat`, `prix_plat`, `categ_plat`) VA
 ('Risotto épinard', 'Risotto épinard et crême, servi avec du parmesan', 10, 4),
 ('Risotto vegan', 'Risotto au lait de coco, raisins secs et pignons', 11, 5),
 ('Soupe tomate', 'Velouté de tomate accompagné au choix de croutons', 7, 6),
-('Bownies', 'Brownies au chocolat noir maison', 5, 7);
+('Brownies', 'Brownies au chocolat noir maison', 5, 7);
 COMMIT;
