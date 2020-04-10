@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet(name = "Servlet_mod", urlPatterns = {"/mod"})
-public class Servlet_mod extends HttpServlet {
+@WebServlet(name = "Servlet_modPlat", urlPatterns = {"/mod"})
+public class Servlet_modPlat extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
 	}
@@ -24,7 +24,7 @@ public class Servlet_mod extends HttpServlet {
 				String paramValue = request.getParameter(paramName);
 				Plat plat = new Plat(Integer.parseInt(paramValue));
 				request.setAttribute("object", plat);
-				request.getRequestDispatcher("views/templates/mod.jsp").forward(request, response);
+				request.getRequestDispatcher("views/templates/modPlat.jsp").forward(request, response);
 			}
 		} catch (ServletException | IOException e) {
 			e.printStackTrace();

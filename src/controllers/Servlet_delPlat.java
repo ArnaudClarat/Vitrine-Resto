@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet(name = "Servlet_del",  urlPatterns = {"/del"})
-public class Servlet_del extends HttpServlet {
+@WebServlet(name = "Servlet_delPlat",  urlPatterns = {"/del"})
+public class Servlet_delPlat extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
 	}
