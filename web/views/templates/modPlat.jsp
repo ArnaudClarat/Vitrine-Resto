@@ -30,7 +30,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form method="post" class="form" action="validate" style="margin-top: 5%">
+                <form method="post" class="form" action="validatePlat" style="margin-top: 5%">
                     <div class="form-row">
                         <div class="col-md-2">
                             <input type="hidden" name="id_plat" value="${object.getId()}">
@@ -70,7 +70,7 @@
                         <input type="submit" class="btn btn-secondary" value="Valider">
                     </div>
                 </form>
-                <form class="form form-inline" action="del" method="get">
+                <form class="form form-inline" action="delPlat" method="get">
                     <input type="hidden" name="id_plat" value="${object.getId()}">
                     <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
                 </form>

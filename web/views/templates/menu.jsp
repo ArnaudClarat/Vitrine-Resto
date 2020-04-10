@@ -66,7 +66,7 @@
                                         <h5 class="card-title">${plat.getNom()}</h5>
                                         <p class="card-text">${plat.getDetails()}</p>
                                         <h6 class="menu-price">${plat.getPrix()}€</h6>
-                                        <a href="mod?id=${plat.getId()}">Modifier</a>
+                                        <a href="modPlat?id=${plat.getId()}">Modifier</a>
                                     </div>
                                 </div>
                             </c:if>
