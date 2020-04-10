@@ -1,5 +1,8 @@
 package models;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +31,35 @@ public class Categorie extends BaseEntity {
 			categories.add(new Categorie(i));
 		}
 		return categories;
+	}
+	
+	public static void modCateg(String colonne, String valeur, String id) {
+		try {
+			Connection db = DB.getDB();
+			assert db != null;
+			PreparedStatement pStmt = db.prepareStatement("UPDATE t_categ SET " + colonne + " = ? WHERE id_categ = ?");
+			pStmt.setString(1, valeur);
+			pStmt.setString(2, id);
+			System.out.println(pStmt.execute());
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Erreur modification");
+			System.out.println(false);
+		}
+	}
+	
+	public static void delCateg(String id) {
+		try {
+			Connection db = DB.getDB();
+			assert db != null;
+			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_categ WHERE id_categ = ?");
+			pStmt.setString(1, id);
+			System.out.println(pStmt.execute());
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Erreur suppression");
+			System.out.println(false);
+		}
 	}
 	
 	public String getNom() {

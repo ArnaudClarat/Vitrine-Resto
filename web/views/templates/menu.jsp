@@ -56,8 +56,9 @@
         <div class="row">
             <div class="col-md-12">
                 <c:forEach items="${categories}" var="categorie">
-                    <h5 style="margin-top: 5%"><strong><u>${categorie.getNom()}</u></strong></h5><br>
-                    <div class="row">
+                    <h5 class="d-inline"><strong><u>${categorie.getNom()}</u></strong></h5>
+                    <a href="modCateg?id=${categorie.getId()}" class="m-1 btn btn-secondary">Modifier</a>
+                    <div class="row" style="margin-bottom: 4%">
                         <c:forEach items="${plats}" var="plat">
                             <c:if test="${categorie.getId().equals(plat.getCateg())}">
                                 <div class="card col-md-4" style="width: 18rem;">
