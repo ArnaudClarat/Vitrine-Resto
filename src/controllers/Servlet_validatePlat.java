@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet(name = "Servlet_validate", urlPatterns = {"/validate"})
-public class Servlet_validate extends HttpServlet {
+@WebServlet(name = "Servlet_validatePlat", urlPatterns = {"/validatePlat"})
+public class Servlet_validatePlat extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			String id = request.getParameter("id_plat");
