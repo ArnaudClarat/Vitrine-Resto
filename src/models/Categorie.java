@@ -52,13 +52,23 @@ public class Categorie extends BaseEntity {
 		try {
 			Connection db = DB.getDB();
 			assert db != null;
-			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_categ WHERE id_categ = ?");
-			pStmt.setString(1, id);
-			System.out.println(pStmt.execute());
+			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE categ_plat = ?");
+			pStmt.setInt(1, Integer.parseInt(id));
+			System.out.println(pStmt);
+			if(pStmt.execute()) {
+				pStmt = db.prepareStatement("DELETE FROM t_categ WHERE id_categ = ?");
+				pStmt.setString(1, id);
+				if(pStmt.execute()) {
+					System.out.println("Plats et catégorie supprimés");
+				} else {
+					System.out.println("Catégorie non supprimée");
+				}
+			} else {
+				System.out.println("Plats non supprimés");
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Erreur suppression");
-			System.out.println(false);
+			System.out.println("SQLException");
 		}
 	}
 	

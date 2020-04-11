@@ -57,7 +57,7 @@
             <div class="col-md-12">
                 <c:forEach items="${categories}" var="categorie">
                     <h5 class="d-inline"><strong><u>${categorie.getNom()}</u></strong></h5>
-                    <a href="modCateg?id=${categorie.getId()}" class="m-1 btn btn-secondary">Modifier</a>
+                    <a href="modCateg?id_categ=${categorie.getId()}" class="m-1 btn btn-secondary">Modifier</a>
                     <div class="row" style="margin-bottom: 4%">
                         <c:forEach items="${plats}" var="plat">
                             <c:if test="${categorie.getId().equals(plat.getCateg())}">
@@ -67,7 +67,7 @@
                                         <h5 class="card-title">${plat.getNom()}</h5>
                                         <p class="card-text">${plat.getDetails()}</p>
                                         <h6 class="menu-price">${plat.getPrix()}€</h6>
-                                        <a href="modPlat?id=${plat.getId()}">Modifier</a>
+                                        <a class="btn btn-secondary" href="modPlat?id=${plat.getId()}">Modifier</a>
                                     </div>
                                 </div>
                             </c:if>

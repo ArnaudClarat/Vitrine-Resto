@@ -30,39 +30,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form method="post" class="form" action="validate" style="margin-top: 5%">
+            <form method="post" class="form" action="validateCateg" style="margin-top: 5%">
                 <div class="form-row">
                     <div class="col-md-2">
-                        <input type="hidden" name="id_plat" value="${object.getId()}">
+                        <input type="hidden" name="id_categ" value="${object.getId()}">
                         <fieldset class="form-group">
-                            <label for="nom_plat">Name : </label>
-                            <input class="form-control" type="text" id="nom_plat" name="nom_plat" value="${object.getNom()}" required>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-7">
-                        <fieldset class="form-group">
-                            <label for="details_plat">Détails : </label>
-                            <input class="form-control" type="text" id="details_plat" name="details_plat" value="${object.getDetails()}" required>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-1">
-                        <fieldset class="form-group">
-                            <label for="prix_plat">Prix : </label>
-                            <input class="form-control" type="text" id="prix_plat" name="prix_plat" value="${object.getPrix()}" required>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-2">
-                        <fieldset class="form-group">
-                            <label for="categ_plat">Catégorie : </label>
-                            <select class="form-control" id="categ_plat" name="categ_plat" required>
-                                <option value="1">Viande</option>
-                                <option value="2">Poisson</option>
-                                <option value="3">Volaille</option>
-                                <option value="4">Végé</option>
-                                <option value="5">Vegan</option>
-                                <option value="6">Soupe</option>
-                                <option value="7">Dessert</option>
-                            </select>
+                            <label for="nom_categ">Name : </label>
+                            <input class="form-control" type="text" id="nom_categ" name="nom_categ" value="${object.getNom()}" required>
                         </fieldset>
                     </div>
                 </div>
@@ -70,8 +44,8 @@
                     <input type="submit" class="btn btn-secondary" value="Valider">
                 </div>
             </form>
-            <form class="form form-inline" action="del" method="get">
-                <input type="hidden" name="id_plat" value="${object.getId()}">
+            <form class="form form-inline" action="delCateg" method="get">
+                <input type="hidden" name="id_categ" value="${object.getId()}">
                 <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
             </form>
         </div>

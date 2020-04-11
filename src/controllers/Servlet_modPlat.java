@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet(name = "Servlet_modPlat", urlPatterns = {"/mod"})
+@WebServlet(name = "Servlet_modPlat", urlPatterns = {"/modPlat"})
 public class Servlet_modPlat extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);

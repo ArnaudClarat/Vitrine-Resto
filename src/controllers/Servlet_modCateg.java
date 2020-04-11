@@ -25,7 +25,7 @@ public class Servlet_modCateg extends HttpServlet {
 				String paramValue = request.getParameter(paramName);
 				Categorie categorie = new Categorie(Integer.parseInt(paramValue));
 				request.setAttribute("object", categorie);
-				request.getRequestDispatcher("views/templates/modPlat.jsp").forward(request, response);
+				request.getRequestDispatcher("views/templates/modCateg.jsp").forward(request, response);
 			}
 		} catch (ServletException | IOException e) {
 			e.printStackTrace();
