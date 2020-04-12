@@ -73,7 +73,7 @@ public class Plat extends BaseEntity {
 			assert db != null;
 			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE id_plat = ?");
 			pStmt.setString(1, id);
-			System.out.println(pStmt.execute());
+			System.out.println(pStmt.executeUpdate() != 0);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Erreur suppression");

@@ -54,11 +54,10 @@ public class Categorie extends BaseEntity {
 			assert db != null;
 			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE categ_plat = ?");
 			pStmt.setInt(1, Integer.parseInt(id));
-			System.out.println(pStmt);
-			if(pStmt.execute()) {
+			if(pStmt.executeUpdate() != 0) {
 				pStmt = db.prepareStatement("DELETE FROM t_categ WHERE id_categ = ?");
 				pStmt.setString(1, id);
-				if(pStmt.execute()) {
+				if(pStmt.executeUpdate() != 0) {
 					System.out.println("Plats et catégorie supprimés");
 				} else {
 					System.out.println("Catégorie non supprimée");
