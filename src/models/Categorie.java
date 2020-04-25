@@ -40,11 +40,10 @@ public class Categorie extends BaseEntity {
 			PreparedStatement pStmt = db.prepareStatement("UPDATE t_categ SET " + colonne + " = ? WHERE id_categ = ?");
 			pStmt.setString(1, valeur);
 			pStmt.setString(2, id);
-			System.out.println(pStmt.execute());
+			System.out.println(pStmt.execute() + " " + colonne + " " + valeur + " " + id);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Erreur modification");
-			System.out.println(false);
+			System.out.println(false + " Erreur modification " + colonne + " " + valeur + " " + id);
 		}
 	}
 	
@@ -58,12 +57,12 @@ public class Categorie extends BaseEntity {
 				pStmt = db.prepareStatement("DELETE FROM t_categ WHERE id_categ = ?");
 				pStmt.setString(1, id);
 				if(pStmt.executeUpdate() != 0) {
-					System.out.println("Plats et catégorie supprimés");
+					System.out.println("Plats et catégorie " + id + " supprimés");
 				} else {
-					System.out.println("Catégorie non supprimée");
+					System.out.println("Catégorie " + id + " non supprimée");
 				}
 			} else {
-				System.out.println("Plats non supprimés");
+				System.out.println("Plats et catégorie " + id + " non supprimés");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

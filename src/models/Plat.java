@@ -59,11 +59,10 @@ public class Plat extends BaseEntity {
 			PreparedStatement pStmt = db.prepareStatement("UPDATE t_plats SET " + colonne + " = ? WHERE id_plat = ?");
 			pStmt.setString(1, valeur);
 			pStmt.setString(2, id);
-			System.out.println(pStmt.execute());
+			System.out.println(pStmt.execute() + " " + colonne + " " + valeur + " " + id);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Erreur modification");
-			System.out.println(false);
+			System.out.println(false + "Erreur modification " + colonne + " " + valeur + " " + id);
 		}
 	}
 	
@@ -73,11 +72,10 @@ public class Plat extends BaseEntity {
 			assert db != null;
 			PreparedStatement pStmt = db.prepareStatement("DELETE FROM t_plats WHERE id_plat = ?");
 			pStmt.setString(1, id);
-			System.out.println(pStmt.executeUpdate() != 0);
+			System.out.println((pStmt.executeUpdate() != 0) + " plat " + id);
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Erreur suppression");
-			System.out.println(false);
+			System.out.println(false + "Erreur suppression " + id);
 		}
 	}
 	

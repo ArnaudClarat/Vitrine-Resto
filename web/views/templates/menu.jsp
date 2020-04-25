@@ -55,6 +55,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <a href="modCateg?id_categ=0" class="btn btn-primary">Nouvelle Catégorie</a> <!-- N'effectue rien -->
+                <a href="modPlat?id_plat=0" class="btn btn-primary">Nouveau Plat</a> <!-- N'effectue rien -->
+                <br>
+                <br>
                 <c:forEach items="${categories}" var="categorie">
                     <h5 class="d-inline"><strong><u>${categorie.getNom()}</u></strong></h5>
                     <a href="modCateg?id_categ=${categorie.getId()}" class="m-1 btn btn-secondary">Modifier</a>
