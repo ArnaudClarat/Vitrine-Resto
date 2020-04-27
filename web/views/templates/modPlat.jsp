@@ -72,6 +72,7 @@
                 </form>
                 <form class="form form-inline" action="delPlat" method="get">
                     <input type="hidden" name="id_plat" value="${object.getId()}">
+                    
                     <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
                 </form>
             </div>

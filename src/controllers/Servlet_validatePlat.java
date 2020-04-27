@@ -21,8 +21,8 @@ public class Servlet_validatePlat extends HttpServlet {
 				String parameterValue = request.getParameter(parameterName);
 				Plat.modPlat(parameterName, parameterValue, id);
 			}
-			request.getRequestDispatcher("views/templates/menu.jsp").forward(request, response);
-		} catch (ServletException | IOException e) {
+			response.sendRedirect(request.getContextPath() + "/menu");
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

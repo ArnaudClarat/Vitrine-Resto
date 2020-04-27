@@ -38,19 +38,19 @@ abstract class BaseEntity {
 		return null;
 	}
 	
-	static int getCount(Map<String,String> definition) {
+	static ResultSet getCount(Map<String,String> definition) {
 		try {
 			assert db != null;
-			PreparedStatement pStmt = db.prepareStatement("SELECT COUNT(?) FROM " + definition.get("table"));
+			PreparedStatement pStmt = db.prepareStatement("SELECT ? FROM " + definition.get("table"));
 			pStmt.setString(1, definition.get("primary"));
 			ResultSet resultSet = pStmt.executeQuery();
 			if (resultSet.next()) {
-				return resultSet.getInt(1);
+				return resultSet;
 			}
-			return 0;
+			return null;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return 0;
+			return null;
 		}
 	}
 }
