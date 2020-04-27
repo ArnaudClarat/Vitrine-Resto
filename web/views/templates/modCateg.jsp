@@ -42,11 +42,8 @@
                 </div>
                 <div class="form-row">
                     <input type="submit" class="btn btn-secondary" value="Valider">
+                    <a href="delCateg?id_categ=${object.getId()}" class="btn btn-danger">Supprimer</a>
                 </div>
-            </form>
-            <form class="form form-inline" action="delCateg" method="get">
-                <input type="hidden" name="id_categ" value="${object.getId()}">
-                <input type="submit" class="form-inline btn btn-danger" value="Supprimer">
             </form>
         </div>
     </div>

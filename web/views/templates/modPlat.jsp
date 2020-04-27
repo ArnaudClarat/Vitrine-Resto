@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-row">
                         <input type="submit" class="btn btn-secondary" value="Valider">
-                        <a href="delPlat?${object.getId()}" class="btn btn-danger">Supprimer</a>
+                        <a href="delPlat?id_plat=${object.getId()}" class="btn btn-danger">Supprimer</a>
                     </div>
                 </form>
                 <!-- <form class="form form-inline" action="delPlat" method="get">

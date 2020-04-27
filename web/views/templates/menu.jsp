@@ -18,12 +18,15 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
     <div class="container">
-        <a class="navbar-brand" href="menu">EatWell</a>
-        <div class="collapse navbar-collapse" id="site-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
-            </ul>
+        <div class="row">
+            <br>
+            <a class="navbar-brand" href="menu">EatWell</a>
+            <div class="collapse navbar-collapse" id="site-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a href="#section-home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -55,8 +58,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a href="modCateg?id_categ=0" class="btn btn-primary">Nouvelle Catégorie</a> <!-- N'effectue rien -->
-                <a href="modPlat?id_plat=0" class="btn btn-primary">Nouveau Plat</a> <!-- N'effectue rien -->
+                <!--
+                <a href="modCateg?id_categ=0" class="btn btn-primary">Nouvelle Catégorie</a>
+                <a href="modPlat?id_plat=0" class="btn btn-primary">Nouveau Plat</a>
+                -->
                 <br>
                 <br>
                 <c:forEach items="${categories}" var="categorie">
