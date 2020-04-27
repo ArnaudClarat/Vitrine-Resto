@@ -59,7 +59,6 @@
                 <a href="modPlat?id_plat=0" class="btn btn-primary">Nouveau Plat</a> <!-- N'effectue rien -->
                 <br>
                 <br>
-                ${categories}
                 <c:forEach items="${categories}" var="categorie">
                     <h5 class="d-inline"><strong><u>${categorie.getNom()}</u></strong></h5>
                     <a href="modCateg?id_categ=${categorie.getId()}" class="m-1 btn btn-secondary">Modifier</a>

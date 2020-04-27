@@ -2,6 +2,7 @@ package models;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +26,14 @@ public class Categorie extends BaseEntity {
 	}
 	
 	public static ArrayList<Categorie> getAll() {
-		int count = getCount(definition) + 1;
+		ResultSet count = getCount(definition);
 		ArrayList<Categorie> categories = new ArrayList<>();
-		for (int i = 1; i < count; i++) {
-			categories.add(new Categorie(i));
+		try {
+			while (count.next()) {
+				categories.add(new Categorie(Integer.parseInt(count.getString(1))));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		return categories;
 	}
